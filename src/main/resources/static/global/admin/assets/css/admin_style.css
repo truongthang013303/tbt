@@ -1,0 +1,11 @@
+.errorMessage
+{
+	color:red;
+	font-size: 18px;
+}
+
+.is-valid
+{
+	color:green;
+	font-size: 18px;
+}
