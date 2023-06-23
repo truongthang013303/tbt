@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-    <th:block th:replace="/Shared/WorldHead::world_head"></th:block>
+    <th:block th:replace="Shared/WorldHead::world_head"></th:block>
 </head>
 <body>
-<th:block th:replace="/Shared/WorldNavBar::world_navbar"></th:block>
+<th:block th:replace="Shared/WorldNavBar::world_navbar"></th:block>
 
 <div class="main-content-wrapper section-padding-100" >
     <div class="container">
@@ -29,7 +29,7 @@
         
                 <!-- ForYou -->
                 <div class="col-12 col-lg-4">
-                    <th:block th:replace="/Shared/WorldForYou::foryou"></th:block>
+                    <th:block th:replace="Shared/WorldForYou::foryou"></th:block>
                 </div><!-- ForYou End -->
             </div>
             <div class="row">
@@ -42,6 +42,6 @@
         </div>
     </div>
 </div>
-<th:block th:replace="/Shared/WorldFooter::world_footer"></th:block>
+<th:block th:replace="Shared/WorldFooter::world_footer"></th:block>
 </body>
 </html>
