@@ -33,14 +33,14 @@
                                 <div class="single-blog-post">
                                     <!-- Post Thumbnail -->
                                     <div class="post-thumbnail">
-                                        <img th:src="@{'/images/'+${item.thumbnail}}" alt="">
+                                        <img th:src="@{'images/'+${item.thumbnail}}" alt="">
                                         <!-- Catagory -->
                                         <div class="post-cta"><a href="#">[[${item.categoryCode}]]</a>
                                         </div>
                                     </div>
                                     <!-- Post Content -->
                                     <div class="post-content">
-                                        <a th:href="@{'/baiviet/'+${item.id}}" class="headline">
+                                        <a th:href="@{'baiviet/'+${item.id}}" class="headline">
                                             <h5>[[${item.title}]]</h5>
                                         </a>
                                         <p>[[${item.shortDescription}]]</p>
@@ -69,11 +69,11 @@
                                  data-wow-delay="0.1s" style="min-height:97px;">
                                 <!-- Post Thumbnail -->
                                 <div class="post-thumbnail">
-                                    <img th:src="@{'/images/'+${item.thumbnail}}" alt="">
+                                    <img th:src="@{'images/'+${item.thumbnail}}" alt="">
                                 </div>
                                 <!-- Post Content -->
                                 <div class="post-content">
-                                    <a th:href="@{'/baiviet/'+${item.id}}" class="headline">
+                                    <a th:href="@{'baiviet/'+${item.id}}" class="headline">
                                         <h5>[[${item.title}]]</h5>
                                     </a>
                                     <!-- Post Meta -->
@@ -116,11 +116,11 @@
              data-wow-delay="0.2s">
 
             <div class="post-thumbnail">
-                <img th:src="@{'/images/'+${item.thumbnail}}" alt="">
+                <img th:src="@{'images/'+${item.thumbnail}}" alt="">
             </div>
 
             <div class="post-content">
-                <a th:href="@{'/baiviet/'+${item.id}}" class="headline">
+                <a th:href="@{'baiviet/'+${item.id}}" class="headline">
                     <h5>[[${item.title}]]</h5>
                 </a>
                 <p>[[${item.shortDescription}]]</p>
@@ -183,7 +183,7 @@
                                     str += '</div>';
                                     // <!-- Post Content -->
                                     str += '<div class="post-content">';
-                                    str += '<a href="/baiviet/' + item.id + '" class="headline">';
+                                    str += '<a href="baiviet/' + item.id + '" class="headline">';
                                     str += '<h5>' + item.title + '</h5>';
                                     str += '</a>';
                                     //<!-- Post Meta -->
@@ -230,7 +230,7 @@
                                 strNew += '</div>';
                                 // <!-- Post Content -->
                                 strNew += '<div class="post-content">';
-                                strNew += '<a href="/baiviet/' + item.id + '" class="headline">';
+                                strNew += '<a href="baiviet/' + item.id + '" class="headline">';
                                 strNew += '<h5>' + item.title + '</h5>';
                                 strNew += '</a>';
                                 strNew += '<p>' + item.shortDescription + '</p>';
