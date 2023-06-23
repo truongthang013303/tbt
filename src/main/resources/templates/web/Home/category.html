@@ -102,7 +102,7 @@
                             
                             function callAjaxWhenClickLoadMore(page=1, cateCode)
                             {
-                                var url = 'api/new/page?page=';
+                                var url = '/api/new/page?page=';
                                 url += page;
                                 if (cateCode != undefined && cateCode != '' && cateCode !='all') {
                                     url += '&&cateCode=';
@@ -124,11 +124,11 @@
                                                 strNew+='<div class="single-blog-post post-style-4 d-flex align-items-center wow fadeInUpBig" data-wow-delay="0.1s">';
                                                 // <!-- Post Thumbnail -->
                                                 strNew+='<div class="post-thumbnail">';
-                                                    strNew+='<img src="images/'+item.thumbnail+'" alt="">';
+                                                    strNew+='<img src="/images/'+item.thumbnail+'" alt="">';
                                                 strNew+='</div>';
                                                 // <!-- Post Content -->
                                                 strNew+='<div class="post-content">';
-                                                    strNew+='<a href="baiviet/'+item.id+'" class="headline">';
+                                                    strNew+='<a href="/baiviet/'+item.id+'" class="headline">';
                                                         strNew+='<h5>'+item.title+'</h5>';
                                                     strNew+='</a>';
                                                     strNew+='<p>'+item.shortDescription+'</p>';
@@ -151,7 +151,7 @@
                             {
                                 removeAllActiveAnchor();
                                 addClassAnchorTag(cateCode);
-                                var url = 'api/new/page?page=';// /api/new/page?page=1
+                                var url = '/api/new/page?page=';// /api/new/page?page=1
                                 url += page;
                                 if (cateCode != undefined && cateCode != '' && cateCode !='all') {
                                     url += '&cateCode=';
@@ -173,11 +173,11 @@
                                                         strNew += '<div class="single-blog-post post-style-4 d-flex align-items-center wow fadeInUpBig" data-wow-delay="0.1s">';
                                                         // <!-- Post Thumbnail -->
                                                         strNew += '<div class="post-thumbnail">';
-                                                        strNew += '<img src="images/' + item.thumbnail + '" alt="">';
+                                                        strNew += '<img src="/images/' + item.thumbnail + '" alt="">';
                                                         strNew += '</div>';
                                                         // <!-- Post Content -->
                                                         strNew += '<div class="post-content">';
-                                                        strNew += '<a href="baiviet/' + item.id + '" class="headline">';
+                                                        strNew += '<a href="/baiviet/' + item.id + '" class="headline">';
                                                         strNew += '<h5>' + item.title + '</h5>';
                                                         strNew += '</a>';
                                                         strNew += '<p>' + item.shortDescription + '</p>';

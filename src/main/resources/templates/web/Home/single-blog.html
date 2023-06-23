@@ -45,7 +45,7 @@
                                 Complex Concepts in Physics?</h5>
                         </a>
                         <div class="post-thumbnail">
-                            <img th:src="@{~/images/'+${model.thumbnail}}" alt=""
+                            <img th:src="@{~'/images/'+${model.thumbnail}}" alt=""
                                  style="width:100%; padding: 1em; border-radius: 1.5em;">
                         </div>
 
@@ -116,7 +116,7 @@
                                             const rating = { rating: ratingScore, postid: idPost, userid: 0 };
                                             if (idPost != 0 && ratingScore != 0 && valueWhenUserClick != ratingScoreFromServer) {
                                                 $.ajax({
-                                                    url: 'api/new/rating',
+                                                    url: '/api/new/rating',
                                                     type: 'POST',
                                                     async: false,
                                                     contentType: 'application/json',
@@ -236,7 +236,7 @@
                             dataSent.idPost = idOfPost;
                             dataSent.content=$.trim(dataSent.content);
                             $.ajax({
-                                url: 'api/comment',
+                                url: '/api/comment',
                                 type: 'POST',
                                 contentType: 'application/json',
                                 data: JSON.stringify(dataSent),
@@ -293,7 +293,7 @@
                             return;
                         }
                         $.ajax({
-                            url: 'api/comment',
+                            url: '/api/comment',
                             type: 'DELETE',
                             contentType: 'application/json',
                             data: JSON.stringify(ids),
@@ -314,7 +314,7 @@
                         let ids = [];//[5, 6, 7...,n]
                         let comments = [];
                         $.ajax({
-                            url: 'api/comment',
+                            url: '/api/comment',
                             type: 'GET',
                             contentType: 'application/json',
                             data: dataSent,
