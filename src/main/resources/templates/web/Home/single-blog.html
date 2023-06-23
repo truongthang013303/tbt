@@ -57,7 +57,7 @@
                             <li><a href="#">Liberty</a></li>
                             <li><a href="#">Recommendations</a></li>
                             <li><a href="#">Interpritation</a></li> -->
-                            <li><a th:href="@{'category/'+${model.categoryCode}}" id="categoryCode"
+                            <li><a th:href="@{${'/category/'+model.categoryCode}}" id="categoryCode"
                                    th:text="${model.categoryCode}">Manual</a></li>
                         </ul>
                         <!-- Post Meta -->

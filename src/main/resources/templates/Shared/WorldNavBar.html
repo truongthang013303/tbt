@@ -33,14 +33,14 @@
                     <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                   </li>
                   <li class="nav-item">
-                    <a class="nav-link" th:href="@{'category'}">Category</a>
+                    <a class="nav-link" th:href="@{!/category}">Category</a>
                   </li>
                   <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                       data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Welcome:<span sec:authentication="name" id="usernameSecurity">Username</span></a>
                     <span name="useridSecurity" id="useridSecurity" sec:authentication="principal.id" style="display: none;"></span>
                       <div class="dropdown-menu" aria-labelledby="navbarDropdown" sec:authorize="hasAuthority('ACCESS_HOMEADMIN') OR hasRole('ROLE_ADMIN')">
-                      <a class="dropdown-item" th:href="@{'quantri'}">Admin page</a>
+                      <a class="dropdown-item" th:href="@{~/quantri}">Admin page</a>
                     </div>
                   </li>
                   <li class="nav-item" sec:authorize="!isAuthenticated()">
