@@ -50,7 +50,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 			.loginPage("/login")
 			.loginProcessingUrl("/login")
 			.successHandler(customSuccessHandler)
-			.failureUrl("/login?error=true")
+			.failureUrl("login?error=true")
 			.permitAll()
 			.and()
 			.logout().deleteCookies("JSESSIONID","username","userid").invalidateHttpSession(true).logoutSuccessUrl("/").permitAll()
