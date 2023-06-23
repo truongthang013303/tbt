@@ -55,7 +55,7 @@ public class GlobalExceptionHandler {
     public void handleAccessDeniedGlobalExceptionHandler(Exception e, HttpServletRequest request, HttpServletResponse response)
     {
         try {
-            response.sendRedirect("/accessdenied");
+            response.sendRedirect("accessdenied");
         } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
