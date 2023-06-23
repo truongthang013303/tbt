@@ -30,25 +30,25 @@ public class HomeController {
     @Autowired
     private ICategoryService categoryService;
 
-    @RequestMapping(value = "/403", method = RequestMethod.GET)
+    @RequestMapping(value = "403", method = RequestMethod.GET)
     public String pageNotFound()
     {
         return "403";
     }
 
-    @RequestMapping(value = {"/category/{code}","/category"}, method = RequestMethod.GET)
+    @RequestMapping(value = {"category/{code}","/category"}, method = RequestMethod.GET)
     public ModelAndView newsSortByCate(@PathVariable(name = "code", required = false) String cateCode)
     {
-        ModelAndView mav = new ModelAndView("/web/Home/category");
+        ModelAndView mav = new ModelAndView("web/Home/category");
         mav.addObject("categoryCodeFromUser",cateCode);
         mav.addObject("categories",categoryService.findAll());
         return mav;
     }
 
-    @RequestMapping(value ="/baiviet/{id}", method = RequestMethod.GET)
+    @RequestMapping(value ="baiviet/{id}", method = RequestMethod.GET)
     public ModelAndView newDetailWorld(@PathVariable(name = "id", required = true) long id, HttpServletRequest request, HttpServletResponse response, Authentication authentication)
     {
-        ModelAndView mav = new ModelAndView("/web/Home/single-blog");
+        ModelAndView mav = new ModelAndView("web/Home/single-blog");
         //status=1[da duyet]
         NewDTO model =  newService.findByIdAndStatus(id, 1);
         if(model==null){
@@ -78,10 +78,10 @@ public class HomeController {
         return mav;
     }
 
-    @RequestMapping(value = "/search", method = RequestMethod.GET)
+    @RequestMapping(value = "search", method = RequestMethod.GET)
     public ModelAndView search(@RequestParam(name = "keyword") @NotBlank Optional<String> keyword, Model model)
     {
-        ModelAndView mav = new ModelAndView("/web/Home/search");
+        ModelAndView mav = new ModelAndView("web/Home/search");
         if(!keyword.isPresent()){
             return mav;
         }
@@ -90,13 +90,13 @@ public class HomeController {
         return mav;
     }
 
-    @RequestMapping(value = "/accessdenied", method = RequestMethod.GET)
+    @RequestMapping(value = "accessdenied", method = RequestMethod.GET)
     public String accessdinied()
     {
         return "accessdenied";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = "login", method = RequestMethod.GET)
     @ResponseBody
     //Trong config spring security khi login failed se chay vao duong dan /login?error==true
     public String loginPage(@RequestParam(name = "error", required = false) String error)
