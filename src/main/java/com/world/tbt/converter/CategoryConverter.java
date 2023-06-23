@@ -19,6 +19,8 @@ public class CategoryConverter implements Converter<CategoryEntity, CategoryDTO>
 		}
 		result.setCreatedBy(entity.getCreatedBy());
 		result.setCreatedDate(entity.getModifiedDate());
+		result.setModifiedBy(entity.getModifiedBy());
+		result.setModifiedDate(entity.getModifiedDate());
 		return result;
 	}
 	
