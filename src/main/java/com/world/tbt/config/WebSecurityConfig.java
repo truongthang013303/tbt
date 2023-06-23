@@ -13,6 +13,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+
 @Configuration
 @EnableWebSecurity
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true, jsr250Enabled = true)
@@ -38,7 +39,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-	http.csrf().disable()
+	http.csrf().disable().cors().disable()
 			.authorizeRequests()
 			.antMatchers("/home/**").permitAll()
 			.antMatchers("/quantri").hasAnyAuthority("ROLE_ADMIN","ROLE_AUTHOR","ACCESS_HOMEADMIN")
@@ -60,4 +61,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter
 	{
 		web.ignoring().antMatchers("/global/**");
 	}
+
+
 }
