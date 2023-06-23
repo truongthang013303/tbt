@@ -11,7 +11,7 @@
                 <div class="single-blog-post post-style-2 d-flex align-items-center widget-post">
                     <!-- Post Thumbnail -->
                     <div class="post-thumbnail">
-                        <img th:src="@{/global/World/img/blog-img/b11.jpg}" alt="">
+                        <img th:src="@{global/World/img/blog-img/b11.jpg}" alt="">
                     </div>
                     <!-- Post Content -->
                     <div class="post-content">
@@ -67,10 +67,10 @@
                     $.each(data.content, function (i, item) {
                         str+='<div class="single-blog-post post-style-2 d-flex align-items-center widget-post">';
                             str+='<div class="post-thumbnail">';
-                                str+='<img src="/images/'+item.thumbnail+'" alt="">';
+                                str+='<img src="images/'+item.thumbnail+'" alt="">';
                             str+='</div>';
                             str+='<div class="post-content">';
-                                str+='<a href="/baiviet/'+item.id+'" class="headline">';
+                                str+='<a href="baiviet/'+item.id+'" class="headline">';
                                     str+='<h5 class="mb-0">'+item.title+'</h5>';
                                 str+='</a>';
                             str+='</div>';
