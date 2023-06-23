@@ -2,7 +2,6 @@ package com.world.tbt.controller.admin;
 
 import com.world.tbt.dto.CategoryDTO;
 import com.world.tbt.service.ICategoryService;
-import org.aspectj.bridge.MessageUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
@@ -10,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
+
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
@@ -19,8 +19,6 @@ public class CategortyController
 {
 	@Autowired
 	private ICategoryService categoryService;
-	@Autowired
-	private MessageUtil messageUtil;
 	
 	@RequestMapping(value = {"quantri/theloai/danhsach","quantri/theloai"}, method = RequestMethod.GET)
 	public ModelAndView categoryListPage(@RequestParam(name = "page", required = false) Optional<Integer> page, 
