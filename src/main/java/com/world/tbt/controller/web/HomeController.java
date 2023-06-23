@@ -14,6 +14,6 @@ public class HomeController {
     @RequestMapping(value = {"","default"}, method = RequestMethod.GET)
     public String defaultPage()
     {
-        return "default";
+        return "web/Home/WorldHome";
     }
 }
