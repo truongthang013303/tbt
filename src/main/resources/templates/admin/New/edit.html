@@ -46,7 +46,7 @@
 						<div class="col-sm-9">
 							<select th:field="*{status}" onchange="messageDisplay()">
 								<option value="" selected="selected">---Mời chọn---</option>
-								<option th:each="value:${T(com.example.demo1.dto.PostStatus).values()}"
+								<option th:each="value:${T(com.world.tbt.dto.PostStatus).values()}"
 									th:value="${value}" th:text="${value.postStatusName}"></option>
 							</select>
 						</div>
