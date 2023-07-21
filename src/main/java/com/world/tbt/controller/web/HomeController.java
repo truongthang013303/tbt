@@ -96,9 +96,9 @@ public class HomeController {
         return "accessdenied";
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @RequestMapping(value = {"/login", "login"}, method = RequestMethod.GET)
     @ResponseBody
-    //Trong config spring security khi login failed se chay vao duong dan /login?error==true
+    //Trong config spring security khi login failed se chay vao duong dan /login?error=true
     public String loginPage(@RequestParam(name = "error", required = false) String error)
     {
         if(error!=null&&error.equalsIgnoreCase("true"))
@@ -107,7 +107,7 @@ public class HomeController {
         }
         return "successed";
     }
-    @RequestMapping(value = {"home",""}, method = RequestMethod.GET)
+    @RequestMapping(value = {"home","/"}, method = RequestMethod.GET)
     public ModelAndView world(HttpServletResponse response, Principal principal, Authentication authentication)
     {
         ModelAndView mav = new ModelAndView("web/Home/WorldHome");

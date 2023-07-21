@@ -1,20 +1,20 @@
 package com.world.tbt.security;
 
-import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.servlet.http.Cookie;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
 import com.world.tbt.dto.AppUser;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.SimpleUrlAuthenticationSuccessHandler;
 import org.springframework.stereotype.Component;
+
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Component
 public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 	
@@ -52,14 +52,10 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
 	private String determineTargetUrl(Authentication authentication, HttpServletRequest request) {
 		String url = "";
 		List<String> authoritiesAndRoles = new ArrayList<>();
-		//List<String> roles = com.example.demo1.utils.SecurityUtils.getAuthorities();
-		List<GrantedAuthority> authorities = (List<GrantedAuthority>) authentication.getAuthorities();
-		for (GrantedAuthority authority : authorities) {
-			authoritiesAndRoles.add(authority.getAuthority());
-		}
+		authoritiesAndRoles = authentication.getAuthorities().stream().map(a->a.getAuthority()).collect(Collectors.toList());
 		if (authoritiesAndRoles.contains("ACCESS_HOMEADMIN") || authoritiesAndRoles.contains("ROLE_ADMIN")) {
-			url = "/quantri";
-			//url=request.getHeader("Referer");
+			//url = "/quantri";
+			url=request.getHeader("Referer");
 		}
 		else
 		{

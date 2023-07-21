@@ -7,6 +7,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
@@ -23,6 +24,12 @@ public class GlobalExceptionHandler {
     public ResponseEntity<?> handleInvalidDefinitionException(InvalidDefinitionException e)
     {
         return ResponseEntity.status(500).body("Internal Server Error");
+    }
+    @ExceptionHandler(RequestRejectedException.class)
+    public ResponseEntity<?> handleRequestRejectedException(RequestRejectedException e)
+    {
+        System.out.println("The request was rejected because the URL contained a potentially malicious - double slash");
+        return ResponseEntity.badRequest().body("The request was rejected because the URL contained a potentially malicious - double slash");
     }
     //Thymeleaf exception
     @ExceptionHandler(org.attoparser.ParseException.class)

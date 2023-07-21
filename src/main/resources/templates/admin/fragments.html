@@ -8,10 +8,10 @@
 		<meta name="description" content="overview &amp; stats" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 		<!-- Favicon-->
-		<link rel="icon" type="image/x-icon" th:href="@{/favicon.ico}" />
+		<link rel="icon" type="image/x-icon" th:href="@{~/favicon.ico}" />
 		<link rel="stylesheet" th:href="@{~/global/admin/assets/css/bootstrap.min.css}" />
 		<link rel="stylesheet" th:href="@{~/global/admin/assets/font-awesome/4.5.0/css/font-awesome.min.css}" />
-		<link rel="stylesheet" th:href="@{~/global/admin/assets/css/ace.min.css}" class="ace-main-stylesheet" id="main-ace-style" />>
+		<link rel="stylesheet" th:href="@{~/global/admin/assets/css/ace.min.css}" class="ace-main-stylesheet" id="main-ace-style" />
 		<link rel="stylesheet" th:href="@{~/global/sweetalert/sweetalert2.min.css}" />
 		<script th:src="@{~/global/admin/assets/js/jquery-2.1.4.min.js}"></script>
 		<!-- Jquery validation -->
@@ -32,16 +32,11 @@
 		<!-- jquery charCount -->
 		<script th:src="@{~/global/JS/jquery.charCountPlugin.js}"></script>
 		<!-- CKEditor4 -->
+		<!-- The "two forward slashes" are a common shorthand for "request the referenced resource using whatever protocol is being used to load the current page" -->
 		<script src="//cdn.ckeditor.com/4.21.0/full/ckeditor.js"></script>
-
-		<!-- 		<script th:src="@{/global/ckeditor/styles.js}"></script>
-		
-		<link rel="stylesheet" th:href="@{/global/ckeditor/contents.css}" /> -->
-
 	</th:block>
 	<title>Admin page</title>
 </head>
-
 <body>
 	<!-- topNav -->
 	<div id="navbar" class="navbar navbar-default ace-save-state" th:fragment="admin_topNav">
@@ -193,14 +188,10 @@
 		<script th:src="@{~/global/admin/assets/js/jquery.flot.min.js}"></script>
 		<script th:src="@{~/global/admin/assets/js/jquery.flot.pie.min.js}"></script>
 		<script th:src="@{~/global/admin/assets/js/jquery.flot.resize.min.js}"></script>
-
 		<script th:src="@{~/global/admin/assets/js/jquery.easypiechart.min.js}"></script>
 		<!-- ace scripts -->
 		<script th:src="@{~/global/admin/assets/js/ace-elements.min.js}"></script>
 		<script th:src="@{~/global/admin/assets/js/ace.min.js}"></script>
-		<!-- twbsPagination -->
-		<script th:src="@{~/global/JS/jquery.twbsPagination.min.js}"></script>
 	</div>
 </body>
-
 </html>

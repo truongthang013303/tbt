@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 <head>
   <meta charset="UTF-8">
   <title>Title</title>
@@ -159,7 +159,7 @@
                     </div>
                     <div class="form-check" style="margin-bottom: 1rem;">
                       <input type="checkbox" class="form-check-input" id="remember-me" name="remember-me">
-                      <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+                      <label class="form-check-label" for="">Remember Me</label>
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                   </form>
@@ -178,8 +178,6 @@
                       <label for="fullname">Fullname</label>
                       <input type="text" class="form-control" id="fullName" aria-describedby="emailHelp"
                         placeholder="Enter email" name="fullName">
-                      <small id="emailHelp" class="form-text text-muted">We'll never share your information with anyone
-                        else.</small>
                     </div>
                     <div class="form-group">
                       <label for="signupPassword">Password</label>
