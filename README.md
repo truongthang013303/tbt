@@ -39,21 +39,21 @@
 - Access to the admin page: /quantri
 - Username: admin
 - Password: 123456
-# Link
+# Links
 ### Admin Page Links
 - /quantri - admin dashboard
 - /quantri/theloai/danhsach - category management page
 - /quantri/baiviet/danhsach – news management page
 - /quantri/nguoidung/danhsach – user management page
 - /quantri/role/danhsach – role management page
-- /quantri/pivilege – privilege management page
+- /quantri/privilege – privilege management page
 - /quantri/comment – comment management page
 ### User Home Page Links
 - / - home page
 ### Other Links
 - /login - login
 - /logout - logout
-- /register - register page
+- /register - register
 
 
 
