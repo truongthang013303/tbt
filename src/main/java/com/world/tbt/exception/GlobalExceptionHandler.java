@@ -10,10 +10,12 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.firewall.RequestRejectedException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
+import org.springframework.web.method.annotation.MethodArgumentTypeMismatchException;
 import org.springframework.web.multipart.MaxUploadSizeExceededException;
 import org.springframework.web.servlet.NoHandlerFoundException;
 import org.thymeleaf.exceptions.TemplateInputException;
 import org.thymeleaf.exceptions.TemplateProcessingException;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
@@ -84,4 +86,16 @@ public class GlobalExceptionHandler {
         System.out.println("handleUsernameNotFoundException()-GlobalExceptionHandler.class");
         return ResponseEntity.status(HttpStatus.EXPECTATION_FAILED).body("File too large!");
     }
+    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ResponseEntity<?> handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException exc) {
+        System.out.println("handleMethodArgumentTypeMismatchException()-GlobalExceptionHandler.class");
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(exc.getMessage());
+    }
+    //Another way similar to resolve in DefaultHandlerExceptionResolver.class
+/*    @ExceptionHandler(MethodArgumentTypeMismatchException.class)
+    public ModelAndView handleMethodArgumentTypeMismatchException(MethodArgumentTypeMismatchException exc,HttpServletRequest request, HttpServletResponse response, @Nullable Object handler) throws IOException {
+        System.out.println("handleMethodArgumentTypeMismatchException()-GlobalExceptionHandler.class");
+        response.sendError(400);
+        return new ModelAndView();
+    }*/
 }

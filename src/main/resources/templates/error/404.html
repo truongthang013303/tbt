@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>404</title>
+</head>
+<body>
+<!--if not implements ErrorController spring boot will return this page for 404-->
+<!--but in this project we using MyErrorController.class implements ErrorController so resources/templates/error/400.html and 404.html will be ignore-->
+<!--this page return from HomeController.class-newDetailWorld() when a post not found 404-->
+<p>/resources/templates/error/404.html</p>
+<h1>Something went wrong! </h1>
+<h2>Our Engineers are on it</h2>
+<a href="/">Go Home</a>
+</body>
+</html>

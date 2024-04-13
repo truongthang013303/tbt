@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>400</title>
+</head>
+<body>
+<!--if not implements ErrorController spring boot will return this page for 400-->
+<!--but in this project we using MyErrorController.class implements ErrorController so resources/templates/error/400.html and 404.html will be ignore-->
+<!--if exception has status code 400 like on the link spring boot automation choose BasicErrorController to return this page /resources/template/error/400.html-->
+<p>/resources/templates/error/400.html</p>
+<h1>Something went wrong! </h1>
+<h2>Our Engineers are on it</h2>
+<a href="/">Go Home</a>
+</body>
+</html>

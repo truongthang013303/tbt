@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ErrorPage</title>
+</head>
+<body>
+<!--http://localhost:8090/baiviet/search?keyword=iphone-->
+<!--if exception like on the link spring boot automation choose BasicErrorController to return this page-->
+<!--BUT in this project we using MyErrorController implements ErrorController. 404 will return error-404.html. 500 will return error-500.html. Other status code will return error.html-->
+<p>/resources/templates/error.html</p>
+<h1>Something went wrong! </h1>
+<h2>Our Engineers are on it</h2>
+<a href="/">Go Home</a>
+</body>
+</html>
+</html>
